@@ -1,2 +1,2 @@
 # php-transportation-ticketing
-simple online transportation ticketing project made with OOPHP
+highschool OOP software developer final project, build with PHP, MVC architectural pattern
