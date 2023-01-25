@@ -1,7 +1,7 @@
 <body>
-    <?php Flasher::flash(); ?>
-
     <div class="container-fluid col-sm-9 col-md-6 col-lg-5 col-xl-4">
+        <?php Flasher::flash(); ?>
+
         <div class="card shadow">
             <div class="card-body">
                 <form action="<?= BASE_URL ?>/register/sign" method="POST">
