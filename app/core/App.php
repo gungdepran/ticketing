@@ -35,7 +35,7 @@ class App {
         // params
         if (!empty($url))
         {
-            $params = array_values($url);
+            $this->params = array_values($url);
         }
 
         // execute
@@ -44,10 +44,12 @@ class App {
 
     public function parseURL()
     {
-        $url = $_GET['url'];
-        $url = rtrim($url, '/');
-        $url = filter_var($url, FILTER_SANITIZE_URL);
-        $url = explode('/', $url);
-        return $url;
+        if (isset($_GET['url']))
+        {
+            $url = rtrim($_GET['url'], '/');
+            $url = filter_var($url, FILTER_SANITIZE_URL);
+            $url = explode('/', $url);
+            return $url;
+        }
     }
 }

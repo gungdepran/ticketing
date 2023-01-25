@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', '/php-transportation-ticketing');
+define('BASE_URL', '/transportation-ticketing/public');
 
 // DB
 define('DB_HOST', 'localhost');
