@@ -44,4 +44,14 @@ class Penumpang_model {
 
         return $this->db->single();
     }
+
+    public function getPenumpangByUsernameAndPassword($data)
+    {
+        $query = "SELECT * FROM {$this->table} WHERE username=:username AND password=:password";
+        $this->db->query($query);
+        $this->db->bind('username', $data['username']);
+        $this->db->bind('password', $data['password']);
+
+        return $this->db->single();
+    }
 }

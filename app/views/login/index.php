@@ -12,7 +12,7 @@
                     </div>
                     <div class="form-group">
                         <label for="login-password-input">Password</label>
-                        <input class="form-control" type="password" name="username" id="login-password-input" required>
+                        <input class="form-control" type="password" name="password" id="login-password-input" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="w-100 btn btn-primary">Login</button>
