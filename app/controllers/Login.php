@@ -31,6 +31,7 @@ class Login extends Controller {
                 'id_penumpang' => $penumpang['id_penumpang'],
                 'username' => $penumpang['username'],
                 'nama_penumpang' => $penumpang['nama_penumpang'],
+                'level' => 'penumpang',
             ];
 
             $this->directTo();
