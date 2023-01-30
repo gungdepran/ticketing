@@ -21,17 +21,17 @@ class Login extends Controller {
 
         $data['password'] = md5($data['password']);
 
-        $penumpang = $this->model('penumpang_model')->getPenumpangByUsernameAndPassword($data);
+        $petugas = $this->model('petugas_model')->getPetugasByUsernameAndPassword($data);
 
-        if ($penumpang > 0)
+        if ($petugas > 0)
         {
             unset($_SESSION['user']);
 
             $_SESSION['user'] = [
-                'id_penumpang' => $penumpang['id_penumpang'],
-                'username' => $penumpang['username'],
-                'nama_penumpang' => $penumpang['nama_penumpang'],
-                'level' => 'penumpang',
+                'id_penumpang' => $petugas['id_penumpang'],
+                'username' => $petugas['username'],
+                'nama_penumpang' => $petugas['nama_penumpang'],
+                'level' => $petugas['nama_level'],
             ];
 
             $this->directTo();
