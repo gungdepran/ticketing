@@ -25,6 +25,16 @@ class Petugas_model {
         return $this->db->rowCount();
     }
 
+    // query all petugas data
+    public function getAllPetugas()
+    {
+        $query = "SELECT * FROM {$this->table} WHERE id_level=:level ORDER BY nama_petugas ASC";
+        $this->db->query($query);
+        $this->db->bind('level', '2');
+
+        return $this->db->resultSet();
+    }
+
     // query petugas and level data based on username and password
     public function getPetugasByUsernameAndPassword($data)
     {
