@@ -47,8 +47,8 @@
             <?php if(!isset($_SESSION['user'])): ?>
             <?php elseif($_SESSION['user']['level']=='admin'): ?>
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item <?= $data['heading']=='dashboard' && $data['subHeading']=='dashboard' ? 'active' : '' ?>">
+                <a class="nav-link" href="<?= BASE_URL ?>/admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -62,15 +62,15 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item <?= $data['heading']=='admin' ? 'active' : '' ?>">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#adminPetugasCollapse"
                     aria-expanded="true" aria-controls="adminPetugasCollapse">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Petugas</span>
                 </a>
-                <div id="adminPetugasCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="adminPetugasCollapse" class="collapse <?= $data['heading']='admin' && $data['subHeading']=='petugas' ? 'show' : '' ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Daftar Petugas</a>
+                        <a class="collapse-item <?=$data['subHeading']=='petugas' && $data['options']=='daftarPetugas' ? 'active' : ''?>" href="<?= BASE_URL ?>/admin/daftarPetugas">Daftar Petugas</a>
                         <a class="collapse-item" href="#">Tambah Petugas</a>
                     </div>
                 </div>

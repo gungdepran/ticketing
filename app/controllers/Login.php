@@ -38,7 +38,7 @@ class Login extends Controller {
                 'level' => $petugas['nama_level'],
             ];
 
-            $this->directTo();
+            $this->directTo($_SESSION['user']['level']=='admin' ? '/admin' : '/petugas');
         }
 
         Flasher::setFlash('Incorrect username or password!');

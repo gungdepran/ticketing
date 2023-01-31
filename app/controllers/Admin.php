@@ -7,6 +7,9 @@ class Admin extends Controller {
 
         $data = [
             'title' => 'Admin Dashboard',
+            'heading' => 'dashboard',
+            'subHeading' => 'dashboard',
+            'options' => 'dashboard',
         ];
 
         $this->view('templates/header', $data);
@@ -22,6 +25,9 @@ class Admin extends Controller {
 
         $data = [
             'title' => 'Daftar Petugas',
+            'heading' => 'admin',
+            'subHeading' => 'petugas',
+            'options' => 'daftarPetugas',
             'petugas' => $petugas,
         ];
 
