@@ -3,6 +3,8 @@
 class Login extends Controller {
     public function index()
     {
+        Middleware::onlyNotLoggedIn();
+
         $data = [
             'title' => 'Login',
         ];
@@ -14,6 +16,8 @@ class Login extends Controller {
 
     public function sign()
     {
+        Middleware::onlyNotLoggedIn();
+
         $data = [
             'username' => $_POST['username'],
             'password' => $_POST['password'],

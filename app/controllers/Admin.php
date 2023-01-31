@@ -3,6 +3,8 @@
 class Admin extends Controller {
     public function index()
     {
+        Middleware::onlyAdmin();
+
         $data = [
             'title' => 'Admin Dashboard',
         ];
@@ -14,6 +16,8 @@ class Admin extends Controller {
 
     public function daftarPetugas()
     {
+        Middleware::onlyAdmin();
+
         $petugas = $this->model('petugas_model')->getAllPetugas();
 
         $data = [
